@@ -1,8 +1,10 @@
 #define NOB_IMPLEMENTATION
-#include "nob.h"
+#include "include/nob.h"
 
 #define BUILD "build/"
 #define SRC   "src/"
+
+int strcmp(const char *s1, const char *s2);
 
 int main(int argc, char **argv)
 {
@@ -18,8 +20,19 @@ int main(int argc, char **argv)
     nob_cc_inputs(&cmd, SRC "main.c");
     if (!nob_cmd_run(&cmd)) return 1;
 
-    nob_cmd_append(&cmd, "build/main");
-    if (!nob_cmd_run(&cmd)) return 1;
+    if (argc == 2 && strcmp(argv[1], "run") == 0) {
+        nob_cmd_append(&cmd, "build/main");
+        if (!nob_cmd_run(&cmd)) return 1;
+    }
 
     return 0;
+}
+
+int strcmp(const char *s1, const char *s2)
+{
+    while (*s1 != '\0' && *s1 == *s2) {
+        s1++;
+        s2++;
+    }
+    return (int)*s1 - (int)*s2;
 }
