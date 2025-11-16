@@ -1,0 +1,13 @@
+.cache/
+build/
+
+# Executables
+*.exe
+*.out
+*.app
+*.elf
+*.old
+
+# OS-generated files
+.DS_Store
+Thumbs.db
