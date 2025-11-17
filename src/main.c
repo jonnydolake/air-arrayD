@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define AIR_ARRAYD_IMPLEMENTATION
-#include "../air_arrayd.h"
+#include "air_arrayd.h"
 
 int main(void)
 {

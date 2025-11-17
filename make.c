@@ -16,6 +16,7 @@ int main(int argc, char **argv)
 
     nob_cmd_append(&cmd, "clang");
     nob_cc_flags(&cmd);
+    nob_cmd_append(&cmd, "-I./include");
     nob_cc_output(&cmd, BUILD "main");
     nob_cc_inputs(&cmd, SRC "main.c");
     if (!nob_cmd_run(&cmd)) return 1;
