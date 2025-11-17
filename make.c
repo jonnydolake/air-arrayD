@@ -20,7 +20,7 @@ int main(int argc, char **argv)
     nob_cc_inputs(&cmd, SRC "main.c");
     if (!nob_cmd_run(&cmd)) return 1;
 
-    if (argc == 2 && strcmp(argv[1], "run") == 0) {
+    if (strcmp(argv[argc-1], "run") == 0) {
         nob_cmd_append(&cmd, "build/main");
         if (!nob_cmd_run(&cmd)) return 1;
     }

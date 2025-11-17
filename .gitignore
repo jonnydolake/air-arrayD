@@ -3,6 +3,7 @@ build/
 
 # Executables
 *.exe
+*.o
 *.out
 *.app
 *.elf
