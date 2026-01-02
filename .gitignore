@@ -8,7 +8,11 @@ build/
 *.app
 *.elf
 *.old
+make
 
 # OS-generated files
 .DS_Store
 Thumbs.db
+
+#others
+compile_comands.json
