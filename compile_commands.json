@@ -1,7 +1,7 @@
 [
   {
     "directory": "/Users/joao/Documentos/C_Tests/air_arrayD/",
-    "command": "clang -Wall -Wextra -std=c23 -I./include main.c -o build/main" ,
-    "file": "main.c"
+    "command": "clang -Wall -Wextra -fsanitize=undefined,address -std=c23 -I./include src/airlib.c -o build/airlib" ,
+    "file": "src/airlib.c"
   }
 ]

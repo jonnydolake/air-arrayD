@@ -18,7 +18,7 @@ int main(int argc, char **argv)
     nob_cc_flags(&cmd);
     nob_cmd_append(&cmd, "-I./include");
     nob_cc_output(&cmd, BUILD "main");
-    nob_cc_inputs(&cmd, SRC "main.c");
+    nob_cc_inputs(&cmd, SRC "airlib.c");
     if (!nob_cmd_run(&cmd)) return 1;
 
     if (strcmp(argv[argc-1], "run") == 0) {

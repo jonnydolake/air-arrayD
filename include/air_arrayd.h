@@ -1,6 +1,6 @@
 #ifndef _AIR_LIB_
 #define _AIR_LIB_
-// #define AIR_ARRAYD_IMPLEMENTATION
+#define AIR_ARRAYD_IMPLEMENTATION
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -62,6 +62,12 @@ typedef struct {
 
 #ifdef AIR_ARRAYD_IMPLEMENTATION
 
+static inline f32Vec init_floatD(const size_t size, const f32 data[]);
+static inline i32Vec init_intD(const size_t size, const int data[]);
+static inline String init_stringD(const size_t size, const char s[]);
+static inline void print_stringD(String da);
+static inline void print_floatD(f32Vec da);
+static inline void print_intD(i32Vec da);
 
 #define appendD(da, n) \
 do { \
@@ -142,7 +148,7 @@ static inline String init_stringD(const size_t size, const char s[])
     return da;
 }
 
-static void print_stringD(String da) {
+static inline void print_stringD(String da) {
     (da).data[(da).size] = 0;
     printf("%s\n", (da).data);
 }
